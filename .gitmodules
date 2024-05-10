@@ -1,0 +1,12 @@
+[submodule "CENG351-Database_And_File_PA"]
+	path = CENG351-Database_And_File_PA
+	url = https://github.com/basar-yilmaz/CENG351-Database_And_File_PA
+[submodule "CENG315-algorithms_THE"]
+	path = CENG315-algorithms_THE
+	url = https://github.com/basar-yilmaz/CENG315-algorithms_THE
+[submodule "CENG477_ComputerGraphics"]
+	path = CENG477_ComputerGraphics
+	url = https://github.com/basar-yilmaz/CENG477_ComputerGraphics
+[submodule "CENG435_NetworkPA"]
+	path = CENG435_NetworkPA
+	url = https://github.com/basar-yilmaz/CENG435_NetworkPA
