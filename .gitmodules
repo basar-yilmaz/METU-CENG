@@ -16,3 +16,6 @@
 [submodule "CENG336-Embedded"]
 	path = CENG336-Embedded
 	url = https://github.com/basar-yilmaz/CENG336-Embedded
+[submodule "CENG384-Signal-Systems"]
+	path = CENG384-Signal-Systems
+	url = https://github.com/basar-yilmaz/CENG384-Signal-Systems
