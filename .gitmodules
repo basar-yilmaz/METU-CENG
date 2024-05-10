@@ -13,3 +13,6 @@
 [submodule "CENG334-OS"]
 	path = CENG334-OS
 	url = https://github.com/basar-yilmaz/CENG334-Operating-Systems-THE
+[submodule "CENG336-Embedded"]
+	path = CENG336-Embedded
+	url = https://github.com/basar-yilmaz/CENG336-Embedded
