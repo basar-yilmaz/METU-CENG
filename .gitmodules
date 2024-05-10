@@ -10,3 +10,6 @@
 [submodule "CENG435_NetworkPA"]
 	path = CENG435_NetworkPA
 	url = https://github.com/basar-yilmaz/CENG435_NetworkPA
+[submodule "CENG334-OS"]
+	path = CENG334-OS
+	url = https://github.com/basar-yilmaz/CENG334-Operating-Systems-THE
