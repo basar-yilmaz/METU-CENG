@@ -1,0 +1,82 @@
+CarID: 0, ts: 0, traveling to connector.
+CarID: 3, ts: 0, traveling to connector.
+CarID: 4, ts: 0, traveling to connector.
+CarID: 1, ts: 0, traveling to connector.
+CarID: 2, ts: 0, traveling to connector.
+CarID: 5, ts: 0, traveling to connector.
+CarID: 0, ts: 100, arrived at connector.
+CarID: 0, ts: 100, started passing connector.
+CarID: 3, ts: 100, arrived at connector.
+CarID: 3 starting timedwait
+CarID: 4, ts: 100, arrived at connector.
+CarID: 5, ts: 100, arrived at connector.
+CarID: 1, ts: 301, arrived at connector.
+CarID: 1, ts: 311, started passing connector.
+CarID: 0, ts: 501, finished passing connector.
+CarID: 0, ts: 501, traveling to connector.
+CarID: 2, ts: 601, arrived at connector.
+CarID: 3 TIMED OUT
+CarID: 0, ts: 601, arrived at connector.
+CarID: 2 starting timedwait
+CarID: 1, ts: 711, finished passing connector.
+CarID: 1, ts: 711, traveling to connector.
+CarID: 3, ts: 711, started passing connector.
+CarID: 4, ts: 721, started passing connector.
+CarID: 5, ts: 732, started passing connector.
+CarID: 1, ts: 1010, arrived at connector.
+CarID: 2 TIMED OUT
+CarID: 3, ts: 1110, finished passing connector.
+CarID: 3, ts: 1110, traveling to connector.
+CarID: 4, ts: 1121, finished passing connector.
+CarID: 4, ts: 1121, traveling to connector.
+CarID: 5, ts: 1131, finished passing connector.
+CarID: 5, ts: 1131, traveling to connector.
+CarID: 2, ts: 1131, started passing connector.
+CarID: 0, ts: 1142, started passing connector.
+CarID: 1, ts: 1152, started passing connector.
+CarID: 3, ts: 1211, arrived at connector.
+CarID: 3 starting timedwait
+CarID: 4, ts: 1222, arrived at connector.
+CarID: 5, ts: 1232, arrived at connector.
+CarID: 2, ts: 1532, finished passing connector.
+CarID: 2, ts: 1532, traveling to connector.
+CarID: 0, ts: 1542, finished passing connector.
+CarID: 0, ts: 1542, traveling to connector.
+CarID: 1, ts: 1552, finished passing connector.
+CarID: 1, ts: 1552, traveling to connector.
+CarID: 3 exiting timedwait, NO TIMEOUT
+CarID: 3, ts: 1552, started passing connector.
+CarID: 4, ts: 1562, started passing connector.
+CarID: 5, ts: 1573, started passing connector.
+CarID: 0, ts: 1642, arrived at connector.
+CarID: 0 starting timedwait
+CarID: 1, ts: 1852, arrived at connector.
+CarID: 3, ts: 1952, finished passing connector.
+CarID: 3, ts: 1952, traveling to connector.
+CarID: 4, ts: 1963, finished passing connector.
+CarID: 4, ts: 1963, traveling to connector.
+CarID: 5, ts: 1973, finished passing connector.
+CarID: 5, ts: 1973, traveling to connector.
+CarID: 0 exiting timedwait, NO TIMEOUT
+CarID: 0, ts: 1973, started passing connector.
+CarID: 1, ts: 1983, started passing connector.
+CarID: 3, ts: 2052, arrived at connector.
+CarID: 3 starting timedwait
+CarID: 4, ts: 2062, arrived at connector.
+CarID: 5, ts: 2072, arrived at connector.
+CarID: 2, ts: 2131, arrived at connector.
+CarID: 2, ts: 2142, started passing connector.
+CarID: 0, ts: 2373, finished passing connector.
+CarID: 1, ts: 2383, finished passing connector.
+CarID: 2, ts: 2542, finished passing connector.
+CarID: 2, ts: 2542, traveling to connector.
+CarID: 3 exiting timedwait, NO TIMEOUT
+CarID: 3, ts: 2542, started passing connector.
+CarID: 4, ts: 2553, started passing connector.
+CarID: 5, ts: 2563, started passing connector.
+CarID: 3, ts: 2942, finished passing connector.
+CarID: 4, ts: 2953, finished passing connector.
+CarID: 5, ts: 2963, finished passing connector.
+CarID: 2, ts: 3142, arrived at connector.
+CarID: 2, ts: 3142, started passing connector.
+CarID: 2, ts: 3543, finished passing connector.
