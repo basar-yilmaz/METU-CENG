@@ -1,0 +1,161 @@
+.pos 0x0
+init:
+    irmovq stack, %rsp
+    irmovq array_begin1, %rdi
+    irmovq array_end1, %rsi
+    irmovq array_begin2, %rdx
+    irmovq array_end2, %rcx
+    irmovq array_begin3, %r8
+    call merge
+    halt
+
+
+merge:
+    rmmovq    %rdi, -8(%rsp)   # begin1
+    rmmovq    %rsi, -16(%rsp)  # end1
+    rmmovq    %rdx, -24(%rsp)  # begin2
+    rmmovq    %rcx, -32(%rsp)  # end2
+    rmmovq    %r8, -40(%rsp)   # begin3
+    jmp first_while
+
+first_while:
+    mrmovq   -8(%rsp), %rax    # %rax = begin1
+    mrmovq   -16(%rsp), %rbx   # %rbx = end1
+    subq     %rbx, %rax        # %rax = begin1 - end1
+    jge second_while           # first condition violated
+    mrmovq   -24(%rsp), %rax   # %rcx = begin2
+    mrmovq   -32(%rsp), %rbx   # %rdx = end2
+    subq     %rbx, %rax        # %rax = begin2 - end2
+    jge second_while           # second condition violated
+    jmp first_while_body       # both conditions satisfied
+
+first_while_body:
+    mrmovq   -8(%rsp), %rax    # %rax = begin1
+    mrmovq   0(%rax), %rdx     # %rdx = *begin1
+    mrmovq   -24(%rsp), %rax   # %rax = begin2
+    mrmovq   0(%rax), %rax     # %rax = *begin2
+    subq     %rax, %rdx        # %rdx = *begin1 - *begin2
+    jge      first_while_else  # goes the else condition
+    mrmovq   -8(%rsp), %rdx    # %rdx = begin1
+    irmovq  $8, %r12           # %r12 = 8
+    addq     %r12, %rdx        # %rdx = begin1 + 8
+    rrmovq   %rdx, %rax        # %rax = begin1 + 8
+    subq     %r12, %rdx        # %rdx = begin1 + 8 - 8 (check)
+    rmmovq   %rax, -8(%rsp)    # begin1 = begin1 + 8
+    mrmovq   -40(%rsp), %rax   # %rax = begin3
+    addq     %r12, %rax        # %rax = begin3 + 8
+    rrmovq   %rax, %rcx        # %rcx = begin3 + 8
+    subq     %r12, %rax        # %rax = begin3 + 8 - 8 (check)
+    rmmovq   %rcx, -40(%rsp)   # begin3 = begin3 + 8
+    mrmovq   0(%rdx), %rdx     # %rdx = *begin1
+    rmmovq   %rdx, 0(%rax)     # (*begin3) = (*begin1 )
+    jmp      first_while       # goes the first while
+
+first_while_else:
+    mrmovq  -24(%rsp), %rdx    # %rdx = begin2
+    irmovq  $8, %r12           # %r12 = 8
+    addq    %r12, %rdx         # %rdx = begin2 + 8
+    rrmovq  %rdx, %rax         # %rax = begin2 + 8
+    subq    %r12, %rdx         # %rdx = begin2 + 8 - 8 (check)
+    rmmovq  %rax, -24(%rsp)    # begin2 = begin2 + 8
+    mrmovq  -40(%rsp), %rax    # %rax = begin3
+    addq    %r12, %rax         # %rax = begin3 + 8
+    rrmovq  %rax, %rcx         # %rcx = begin3 + 8
+    subq    %r12, %rax         # %rax = begin3 + 8 - 8 (check)
+    rmmovq  %rcx, -40(%rsp)    # begin3 = begin3 + 8
+    mrmovq  0(%rdx), %rdx      # %rdx = *begin2
+    rmmovq  %rdx, 0(%rax)      # (*begin3) = (*begin2 )
+    jmp first_while            # goes the first while
+
+second_while:
+    mrmovq   -8(%rsp), %rax    # %rax = begin1
+    mrmovq   -16(%rsp), %rbx   # %rbx = end1
+    subq     %rbx, %rax        # %rax = begin1 - end1
+    jl       second_while_body # first condition violated
+    jmp      third_while       # goes the third while
+
+second_while_body:
+    mrmovq  -8(%rsp), %rdx     # %rdx = begin1
+    irmovq  $8, %r12           # %r12 = 8
+    addq    %r12, %rdx         # %rdx = begin1 + 8
+    rrmovq  %rdx, %rax         # %rax = begin1 + 8
+    subq    %r12, %rdx         # %rdx = begin1 + 8 - 8 (check)
+    rmmovq  %rax, -8(%rsp)     # begin1 = begin1 + 8
+    mrmovq  -40(%rsp), %rax    # %rax = begin3
+    addq    %r12, %rax         # %rax = begin3 + 8
+    rrmovq  %rax, %rcx         # %rcx = begin3 + 8
+    subq    %r12, %rax         # %rax = begin3 + 8 - 8 (check)
+    rmmovq  %rcx, -40(%rsp)    # begin3 = begin3 + 8
+    mrmovq  0(%rdx), %rdx      # %rdx = *begin1
+    rmmovq  %rdx, 0(%rax)      # (*begin3) = (*begin1 )
+    jmp     second_while       # goes the second while
+
+third_while:
+    mrmovq  -24(%rsp), %rax    # %rax = begin2
+    mrmovq  -32(%rsp), %rbx    # %rbx = end2
+    subq    %rbx, %rax         # %rax = begin2 - end2
+    jl      third_while_body   # second condition violated
+    ret
+
+third_while_body:
+    mrmovq  -24(%rsp), %rdx    # %rdx = begin2
+    irmovq  $8, %r12           # %r12 = 8
+    addq    %r12, %rdx         # %rdx = begin2 + 8
+    rrmovq  %rdx, %rax         # %rax = begin2 + 8
+    subq    %r12, %rdx         # %rdx = begin2 + 8 - 8 (check)
+    rmmovq  %rax, -24(%rsp)    # begin2 = begin2 + 8
+    mrmovq  -40(%rsp), %rax    # %rax = begin3
+    addq    %r12, %rax         # %rax = begin3 + 8
+    rrmovq  %rax, %rcx         # %rcx = begin3 + 8
+    subq    %r12, %rax         # %rax = begin3 + 8 - 8 (check)
+    rmmovq  %rcx, -40(%rsp)    # begin3 = begin3 + 8
+    mrmovq  0(%rdx), %rdx      # %rdx = *begin2
+    rmmovq  %rdx, 0(%rax)      # (*begin3) = (*begin2 )
+    jmp    third_while         # goes the third while
+
+
+
+
+.pos 0x1008
+array_begin1:
+.quad 107
+.quad 109
+.quad 113
+.quad 131
+.quad 138
+.quad 140
+.quad 143
+.quad 154
+.quad 159
+.quad 160
+.quad 162
+.quad 167
+.quad 189
+.quad 191
+array_end1:
+.quad 0
+array_begin2:
+.quad 111
+.quad 116
+.quad 118
+.quad 127
+.quad 134
+.quad 144
+.quad 169
+.quad 174
+.quad 178
+.quad 182
+.quad 184
+.quad 192
+.quad 195
+.quad 196
+array_end2:
+.quad 0
+
+.pos 0x1300
+array_begin3:
+.quad 0
+.pos 0x1F00
+stack:
+.quad 0
+

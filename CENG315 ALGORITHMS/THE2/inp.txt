@@ -1,0 +1,106 @@
+Contents of inp01.txt:
+1
+5
+ALIS
+ALI
+FURKAN
+MERT
+RECEP
+---------------------------
+Contents of inp02.txt:
+0
+4
+ALHAJOTH
+ALGOL
+ARCTURUS
+ASTERION
+---------------------------
+Contents of inp03.txt:
+1
+8
+HINTON
+LECUN
+KARPATHY
+BENGIO
+GOODFELLOW
+NG
+RUSSELL
+LI
+---------------------------
+Contents of inp04.txt:
+0
+12
+GAUSS
+EULER
+TAO
+CANTOR
+NEWTON
+POINCARE
+LAGRANGE
+CAUCHY
+FOURIER
+LAPLACE
+LEIBNIZ
+FERMAT
+---------------------------
+Contents of inp05.txt:
+1
+2
+SEN
+BEN
+---------------------------
+Contents of inp06.txt:
+0
+7
+BAKUNIN
+KROPOTKIN
+PROUDHON
+GOLDMAN
+ROCKER
+BERKMAN
+LANDAUER
+---------------------------
+Contents of inp07.txt:
+1
+12
+TURING
+KNUTH
+DIJKSTRA
+LOVELACE
+NEUMANN
+RITCHIE
+BABBAGE
+THOMPSON
+PAGE
+SHANNON
+ROSSUM
+HOPPER
+---------------------------
+Contents of inp08.txt:
+1
+11
+NEWTON
+EINSTEIN
+DIRAC
+MAXWELL
+FARADAY
+BOHR
+CURIE
+FEYNMAN
+PLANCK
+BORN
+HAWKING
+---------------------------
+Contents of inp09.txt:
+0
+9
+MARX
+KANT
+LOCKE
+SCHOPENHAUER
+HUME
+RUSSELL
+WITTGENSTEIN
+WITT
+AQUINAS
+---------------------------

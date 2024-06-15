@@ -1,0 +1,75 @@
+# BAŞAR YILMAZ 2644409
+.pos 0x0
+init:
+    irmovq stack, %rsp
+    irmovq $6, %rdx
+    irmovq array_begin, %rdi
+    irmovq array_end, %rsi
+    call binary_search
+    halt
+
+#implement your code below (DO NOT CHANGE/REMOVE THIS COMMENT)
+
+binary_search:
+    rrmovq %rdi, %r10 # initial begin 
+    jmp main_loop
+
+main_loop:
+    # check if end - begin > 0 : else return 1
+    rrmovq %rsi ,%rcx # current end is rcx
+    subq %rdi, %rcx # end - begin
+    jg l1
+    irmovq $-1, %rax
+    ret
+
+l1:
+    # find mid value store into %rax
+    rrmovq %rdi, %rax # %rax = begin
+    # subq %rdi, %rcx # %rcx = end - begin
+    irmovq $16, %r14
+    dvvq %r14, %rcx # %rcx = (end - begin) / 2
+    irmovq $8, %r14
+    mllq %r14, %rcx
+    addq %rcx, %rax # %rax = mid now
+    # check *mid - value == 0 OR < 0 OR >0
+    mrmovq 0(%rax), %r12 # %r12 stores *mid now
+    subq %rdx, %r12 # *mid - value
+    jl l2 # *mid - value < 0
+    jg l3 # *mid - value > 0
+    subq %r10, %rax # mid - initial begin
+    irmovq $8, %r13
+    dvvq %r13, %rax
+    irmovq $1, %r13
+    addq %r13, %rax
+    ret
+    
+l2:
+    rrmovq %rax, %rdi
+    irmovq $8, %r13
+    addq %r13, %rdi
+    jmp main_loop
+
+l3:
+    rrmovq %rax, %rsi
+    jmp main_loop
+
+
+#implement your code above (DO NOT CHANGE/REMOVE THIS COMMENT)
+
+.pos 0x1008
+array_begin:
+    .quad 1
+    .quad 2
+    .quad 3
+    .quad 5
+    .quad 6
+    .quad 7
+    .quad 9
+    .quad 11
+array_end:
+    .quad 0
+.pos 0x1F00
+stack:
+    .quad 0
+
+

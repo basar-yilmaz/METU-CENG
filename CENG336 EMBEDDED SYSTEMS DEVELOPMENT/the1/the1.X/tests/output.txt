@@ -1,0 +1,617 @@
+INITIALIZING...
+INITIALIZATION SUCCESSFUL
+
+
+RUNNING TEST: no_input_test
+	Tests whether the device works as intended when no input is given.
+LATB changed from 0 to 255 (11111111) after 1.8e-05s (FLICKER, ignored)
+LATC changed from 0 to 255 (11111111) after 1.9e-05s (FLICKER, ignored)
+LATD changed from 0 to 255 (11111111) after 2e-05s (FLICKER, ignored)
+LATB changed from 255 to 0 (00000000) after 1.004576s
+LATC changed from 255 to 0 (00000000) after 1.004576s
+LATD changed from 255 to 0 (00000000) after 1.004576s
+LATD changed from 0 to 1 (00000001) after 0.507376s
+LATD changed from 1 to 0 (00000000) after 0.507378s
+LATD changed from 0 to 1 (00000001) after 0.507378s
+LATD changed from 1 to 0 (00000000) after 0.507378s
+LATD changed from 0 to 1 (00000001) after 0.50738s
+LATD changed from 1 to 0 (00000000) after 0.507378s
+LATD changed from 0 to 1 (00000001) after 0.507378s
+LATD changed from 1 to 0 (00000000) after 0.507378s
+
+INITIALIZATION CHECK
+  PORTB
+    Initialization bits: 11111111 (8/8 bits correct)
+    Initialization took 1.004576s (within margin)
+    Grade for "Init Period - PORTB": 2.00 / 2.0
+  PORTC
+    Initialization bits: 11111111 (8/8 bits correct)
+    Initialization took 1.004576s (within margin)
+    Grade for "Init Period - PORTC": 2.00 / 2.0
+  PORTD
+    Initialization bits: 11111111 (8/8 bits correct)
+    Initialization took 1.004576s (within margin)
+    Grade for "Init Period - PORTD": 2.00 / 2.0
+
+CHECKING "No Input - PORTB" (Must be turned off after initialization)
+ Expected:       0x0
+   Output: 0xff  0x0
+Time (ms): 1004 4059
+Correct/Max: 2 / 2
+Grade for "No Input - PORTB": 2.00 / 2.0
+
+CHECKING "No Input - PORTC" (Must be turned off after initialization)
+ Expected:       0x0
+   Output: 0xff  0x0
+Time (ms): 1004 4059
+Correct/Max: 2 / 2
+Grade for "No Input - PORTC": 2.00 / 2.0
+
+CHECKING "No Input - PORTD" (Blinking)
+ Expected:       0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1
+   Output: 0xff  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1
+Time (ms): 1004  507  507  507  507  507  507  507  507
+   Points:       1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0
+Correct/Max: 8.0 / 8
+Grade for "No Input - PORTD": 2.00 / 2.0
+
+
+
+RUNNING TEST: portb_test
+	Tests the PORTB progress bar (RE1) in isolation.
+LATB changed from 0 to 255 (11111111) after 1.8e-05s (FLICKER, ignored)
+LATC changed from 0 to 255 (11111111) after 1.9e-05s (FLICKER, ignored)
+LATD changed from 0 to 255 (11111111) after 2e-05s (FLICKER, ignored)
+LATB changed from 255 to 0 (00000000) after 1.004576s
+Initialization ended
+LATC changed from 255 to 0 (00000000) after 1e-06s (FLICKER, ignored)
+LATD changed from 255 to 0 (00000000) after 2e-06s (FLICKER, ignored)
+LATB changed from 0 to 1 (00000001) after 0.49824s
+LATD changed from 0 to 1 (00000001) after 0.507382s
+LATB changed from 1 to 2 (00000010) after 0.498261s
+LATB changed from 2 to 3 (00000011) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATB changed from 3 to 6 (00000110) after 0.498261s
+LATB changed from 6 to 7 (00000111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATB changed from 7 to 14 (00001110) after 0.498261s
+LATB changed from 14 to 15 (00001111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATB changed from 15 to 30 (00011110) after 0.498261s
+LATB changed from 30 to 31 (00011111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507391s
+LATB changed from 31 to 62 (00111110) after 0.498256s
+LATB changed from 62 to 63 (00111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATB changed from 63 to 126 (01111110) after 0.498261s
+LATB changed from 126 to 127 (01111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATB changed from 127 to 254 (11111110) after 0.498261s
+LATB changed from 254 to 255 (11111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATB changed from 255 to 0 (00000000) after 0.49826s
+LATD changed from 0 to 1 (00000001) after 0.507387s
+LATB changed from 0 to 1 (00000001) after 0.498262s
+LATD changed from 1 to 0 (00000000) after 0.507391s
+LATB changed from 1 to 2 (00000010) after 0.498256s
+LATB changed from 2 to 3 (00000011) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATB changed from 3 to 6 (00000110) after 0.498261s
+
+CHECKING "RE1 Start - PORTB"
+(Half point for every LED match, full point for every LED match with correct duration.)
+ Expected:  0x0  0x1  0x3  0x7  0xf 0x1f 0x3f 0x7f 0xff  0x0  0x1  0x3
+   Output:  0x0  0x1  0x3  0x7  0xf 0x1f 0x3f 0x7f 0xff  0x0  0x1  0x3
+Time (ms):  498  498  498  498  498  498  498  498  498  498  498  498
+   Points:  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0
+Correct/Max: 12.0 / 12
+Grade for "RE1 Start - PORTB": 5.00 / 5.0
+
+CHECKING "RE1 Start - PORTC" (Must be turned off)
+   Output:  0x0
+Time (ms): 5979
+Grade for "RE1 Start - PORTC": 1.00 / 1.0
+
+CHECKING "RE1 Start - PORTD" (Blinking)
+ Expected:  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1
+   Output:  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1
+Time (ms):  507  507  507  507  507  507  507  507  507  507  507  397
+   Points:  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  0.5
+Correct/Max: 11.5 / 12
+Grade for "RE1 Start - PORTD": 0.96 / 1.0
+
+
+LATB changed from 6 to 7 (00000111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.109559s
+LATB changed from 7 to 0 (00000000) after 0.498253s
+LATD changed from 0 to 1 (00000001) after 0.507378s
+LATD changed from 1 to 0 (00000000) after 0.507378s
+LATD changed from 0 to 1 (00000001) after 0.50738s
+LATD changed from 1 to 0 (00000000) after 0.507378s
+
+CHECKING "RE1 Stop - PORTB" (Must be turned off)
+   Output:  0x7  0x0
+Time (ms):  498 1640
+Grade for "RE1 Stop - PORTB": 5.00 / 5.0
+
+CHECKING "RE1 Stop - PORTC" (Must be turned off)
+   Output:  0x0
+Time (ms): 2139
+Grade for "RE1 Stop - PORTC": 1.00 / 1.0
+
+CHECKING "RE1 Stop - PORTD" (Blinking)
+ Expected:  0x0  0x1  0x0  0x1  0x0
+   Output:  0x1  0x0  0x1  0x0  0x1
+Time (ms):  109  507  507  507  507
+   Points:  0.0 0.75 0.75 0.75 0.75
+Correct/Max: 3.0 / 5
+Grade for "RE1 Stop - PORTD": 0.60 / 1.0
+
+
+LATB changed from 0 to 1 (00000001) after 0.352187s
+LATD changed from 0 to 1 (00000001) after 0.507384s
+LATB changed from 1 to 2 (00000010) after 0.498261s
+LATB changed from 2 to 3 (00000011) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATB changed from 3 to 6 (00000110) after 0.498261s
+LATB changed from 6 to 7 (00000111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATB changed from 7 to 14 (00001110) after 0.498261s
+LATB changed from 14 to 15 (00001111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATB changed from 15 to 30 (00011110) after 0.498261s
+LATB changed from 30 to 31 (00011111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507391s
+LATB changed from 31 to 62 (00111110) after 0.498256s
+LATB changed from 62 to 63 (00111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATB changed from 63 to 126 (01111110) after 0.498261s
+LATB changed from 126 to 127 (01111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATB changed from 127 to 254 (11111110) after 0.498261s
+LATB changed from 254 to 255 (11111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATB changed from 255 to 0 (00000000) after 0.49826s
+LATD changed from 0 to 1 (00000001) after 0.507387s
+LATB changed from 0 to 1 (00000001) after 0.498262s
+LATD changed from 1 to 0 (00000000) after 0.507391s
+LATB changed from 1 to 2 (00000010) after 0.498256s
+LATB changed from 2 to 3 (00000011) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATB changed from 3 to 6 (00000110) after 0.498261s
+
+CHECKING "RE1 Restart - PORTB"
+(Half point for every LED match, full point for every LED match with correct duration.)
+ Expected:  0x0  0x1  0x3  0x7  0xf 0x1f 0x3f 0x7f 0xff  0x0  0x1  0x3
+   Output:  0x0  0x1  0x3  0x7  0xf 0x1f 0x3f 0x7f 0xff  0x0  0x1  0x3
+Time (ms):  352  498  498  498  498  498  498  498  498  498  498  498
+   Points:  0.5  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0
+Correct/Max: 11.5 / 12
+Grade for "RE1 Restart - PORTB": 4.79 / 5.0
+
+CHECKING "RE1 Restart - PORTC" (Must be turned off)
+   Output:  0x0
+Time (ms): 5833
+Grade for "RE1 Restart - PORTC": 1.00 / 1.0
+
+CHECKING "RE1 Restart - PORTD" (Blinking)
+ Expected:  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0
+   Output:  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1
+Time (ms):  507  507  507  507  507  507  507  507  507  507  507  251
+   Points:  0.5 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.25
+Correct/Max: 8.25 / 12
+Grade for "RE1 Restart - PORTD": 0.69 / 1.0
+
+
+
+
+RUNNING TEST: portc_test
+	Tests the PORTC progress bar (RE0) in isolation.
+LATB changed from 6 to 255 (11111111) after 1.8e-05s (FLICKER, ignored)
+LATC changed from 0 to 255 (11111111) after 1.9e-05s (FLICKER, ignored)
+LATD changed from 1 to 255 (11111111) after 2e-05s (FLICKER, ignored)
+LATB changed from 255 to 0 (00000000) after 1.004576s
+Initialization ended
+LATC changed from 255 to 0 (00000000) after 1e-06s (FLICKER, ignored)
+LATD changed from 255 to 0 (00000000) after 2e-06s (FLICKER, ignored)
+LATC changed from 0 to 128 (10000000) after 0.498228s
+LATD changed from 0 to 1 (00000001) after 0.507382s
+LATC changed from 128 to 64 (01000000) after 0.498261s
+LATC changed from 64 to 192 (11000000) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATC changed from 192 to 96 (01100000) after 0.498261s
+LATC changed from 96 to 224 (11100000) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATC changed from 224 to 112 (01110000) after 0.498261s
+LATC changed from 112 to 240 (11110000) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATC changed from 240 to 120 (01111000) after 0.498261s
+LATC changed from 120 to 248 (11111000) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507391s
+LATC changed from 248 to 124 (01111100) after 0.498256s
+LATC changed from 124 to 252 (11111100) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATC changed from 252 to 126 (01111110) after 0.498261s
+LATC changed from 126 to 254 (11111110) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATC changed from 254 to 127 (01111111) after 0.498261s
+LATC changed from 127 to 255 (11111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATC changed from 255 to 0 (00000000) after 0.49826s
+LATD changed from 0 to 1 (00000001) after 0.507387s
+LATC changed from 0 to 128 (10000000) after 0.498262s
+LATD changed from 1 to 0 (00000000) after 0.507391s
+LATC changed from 128 to 64 (01000000) after 0.498256s
+LATC changed from 64 to 192 (11000000) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATC changed from 192 to 96 (01100000) after 0.498261s
+
+CHECKING "RE0 Start - PORTB" (Must be turned off)
+   Output:  0x0
+Time (ms): 5979
+Grade for "RE0 Start - PORTB": 1.00 / 1.0
+
+CHECKING "RE0 Start - PORTC"
+(Half point for every LED match, full point for every LED match with correct duration.)
+ Expected:  0x0 0x80 0xc0 0xe0 0xf0 0xf8 0xfc 0xfe 0xff  0x0 0x80 0xc0
+   Output:  0x0 0x80 0xc0 0xe0 0xf0 0xf8 0xfc 0xfe 0xff  0x0 0x80 0xc0
+Time (ms):  498  498  498  498  498  498  498  498  498  498  498  498
+   Points:  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0
+Correct/Max: 12.0 / 12
+Grade for "RE0 Start - PORTC": 5.00 / 5.0
+
+CHECKING "RE0 Start - PORTD" (Blinking)
+ Expected:  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1
+   Output:  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1
+Time (ms):  507  507  507  507  507  507  507  507  507  507  507  397
+   Points:  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  0.5
+Correct/Max: 11.5 / 12
+Grade for "RE0 Start - PORTD": 0.96 / 1.0
+
+
+LATC changed from 96 to 224 (11100000) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.10957s
+LATC changed from 224 to 0 (00000000) after 0.498253s
+LATD changed from 0 to 1 (00000001) after 0.507378s
+LATD changed from 1 to 0 (00000000) after 0.507378s
+LATD changed from 0 to 1 (00000001) after 0.50738s
+LATD changed from 1 to 0 (00000000) after 0.507378s
+
+CHECKING "RE0 Stop - PORTB" (Must be turned off)
+   Output:  0x0
+Time (ms): 2139
+Grade for "RE0 Stop - PORTB": 1.00 / 1.0
+
+CHECKING "RE0 Stop - PORTC" (Must be turned off)
+   Output: 0xe0  0x0
+Time (ms):  498 1640
+Grade for "RE0 Stop - PORTC": 5.00 / 5.0
+
+CHECKING "RE0 Stop - PORTD" (Blinking)
+ Expected:  0x0  0x1  0x0  0x1  0x0
+   Output:  0x1  0x0  0x1  0x0  0x1
+Time (ms):  109  507  507  507  507
+   Points:  0.0 0.75 0.75 0.75 0.75
+Correct/Max: 3.0 / 5
+Grade for "RE0 Stop - PORTD": 0.60 / 1.0
+
+
+LATC changed from 0 to 128 (10000000) after 0.352176s
+LATD changed from 0 to 1 (00000001) after 0.507384s
+LATC changed from 128 to 64 (01000000) after 0.498261s
+LATC changed from 64 to 192 (11000000) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATC changed from 192 to 96 (01100000) after 0.498261s
+LATC changed from 96 to 224 (11100000) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATC changed from 224 to 112 (01110000) after 0.498261s
+LATC changed from 112 to 240 (11110000) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATC changed from 240 to 120 (01111000) after 0.498261s
+LATC changed from 120 to 248 (11111000) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507391s
+LATC changed from 248 to 124 (01111100) after 0.498256s
+LATC changed from 124 to 252 (11111100) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATC changed from 252 to 126 (01111110) after 0.498261s
+LATC changed from 126 to 254 (11111110) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATC changed from 254 to 127 (01111111) after 0.498261s
+LATC changed from 127 to 255 (11111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507389s
+LATC changed from 255 to 0 (00000000) after 0.49826s
+LATD changed from 0 to 1 (00000001) after 0.507387s
+LATC changed from 0 to 128 (10000000) after 0.498262s
+LATD changed from 1 to 0 (00000000) after 0.507391s
+LATC changed from 128 to 64 (01000000) after 0.498256s
+LATC changed from 64 to 192 (11000000) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATC changed from 192 to 96 (01100000) after 0.498261s
+
+CHECKING "RE0 Restart - PORTB" (Must be turned off)
+   Output:  0x0
+Time (ms): 5833
+Grade for "RE0 Restart - PORTB": 1.00 / 1.0
+
+CHECKING "RE0 Restart - PORTC"
+(Half point for every LED match, full point for every LED match with correct duration.)
+ Expected:  0x0 0x80 0xc0 0xe0 0xf0 0xf8 0xfc 0xfe 0xff  0x0 0x80 0xc0
+   Output:  0x0 0x80 0xc0 0xe0 0xf0 0xf8 0xfc 0xfe 0xff  0x0 0x80 0xc0
+Time (ms):  352  498  498  498  498  498  498  498  498  498  498  498
+   Points:  0.5  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0
+Correct/Max: 11.5 / 12
+Grade for "RE0 Restart - PORTC": 4.79 / 5.0
+
+CHECKING "RE0 Restart - PORTD" (Blinking)
+ Expected:  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0
+   Output:  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1
+Time (ms):  507  507  507  507  507  507  507  507  507  507  507  251
+   Points:  0.5 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.75 0.25
+Correct/Max: 8.25 / 12
+Grade for "RE0 Restart - PORTD": 0.69 / 1.0
+
+
+
+
+RUNNING TEST: sync_test
+	Starts and stops both progress bars at the same time.
+LATB changed from 0 to 255 (11111111) after 1.8e-05s (FLICKER, ignored)
+LATC changed from 96 to 255 (11111111) after 1.9e-05s (FLICKER, ignored)
+LATD changed from 1 to 255 (11111111) after 2e-05s (FLICKER, ignored)
+LATB changed from 255 to 0 (00000000) after 1.004576s
+Initialization ended
+LATC changed from 255 to 0 (00000000) after 1e-06s (FLICKER, ignored)
+LATD changed from 255 to 0 (00000000) after 2e-06s (FLICKER, ignored)
+LATC changed from 0 to 128 (10000000) after 0.498231s
+LATB changed from 0 to 1 (00000001) after 0.498246s
+LATD changed from 0 to 1 (00000001) after 0.507388s
+LATC changed from 128 to 64 (01000000) after 0.498264s
+LATC changed from 64 to 192 (11000000) after 1e-06s (FLICKER, ignored)
+LATB changed from 1 to 2 (00000010) after 0.498272s
+LATB changed from 2 to 3 (00000011) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.5074s
+LATC changed from 192 to 96 (01100000) after 0.498272s
+LATC changed from 96 to 224 (11100000) after 1e-06s (FLICKER, ignored)
+LATB changed from 3 to 6 (00000110) after 0.498272s
+LATB changed from 6 to 7 (00000111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.5074s
+LATC changed from 224 to 112 (01110000) after 0.498272s
+LATC changed from 112 to 240 (11110000) after 1e-06s (FLICKER, ignored)
+LATB changed from 7 to 14 (00001110) after 0.498272s
+LATB changed from 14 to 15 (00001111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.5074s
+LATC changed from 240 to 120 (01111000) after 0.498272s
+LATC changed from 120 to 248 (11111000) after 1e-06s (FLICKER, ignored)
+LATB changed from 15 to 30 (00011110) after 0.498272s
+LATB changed from 30 to 31 (00011111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507402s
+LATC changed from 248 to 124 (01111100) after 0.498267s
+LATC changed from 124 to 252 (11111100) after 1e-06s (FLICKER, ignored)
+LATB changed from 31 to 62 (00111110) after 0.498267s
+LATB changed from 62 to 63 (00111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.5074s
+LATC changed from 252 to 126 (01111110) after 0.498272s
+LATC changed from 126 to 254 (11111110) after 1e-06s (FLICKER, ignored)
+LATB changed from 63 to 126 (01111110) after 0.498272s
+LATB changed from 126 to 127 (01111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.5074s
+LATC changed from 254 to 127 (01111111) after 0.498272s
+LATC changed from 127 to 255 (11111111) after 1e-06s (FLICKER, ignored)
+LATB changed from 127 to 254 (11111110) after 0.498272s
+LATB changed from 254 to 255 (11111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.5074s
+LATC changed from 255 to 0 (00000000) after 0.498271s
+LATB changed from 255 to 0 (00000000) after 0.498269s
+LATD changed from 0 to 1 (00000001) after 0.507396s
+LATC changed from 0 to 128 (10000000) after 0.498271s
+LATB changed from 0 to 1 (00000001) after 0.498273s
+LATD changed from 1 to 0 (00000000) after 0.507402s
+LATC changed from 128 to 64 (01000000) after 0.498267s
+LATC changed from 64 to 192 (11000000) after 1e-06s (FLICKER, ignored)
+LATB changed from 1 to 2 (00000010) after 0.498267s
+LATB changed from 2 to 3 (00000011) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.5074s
+LATC changed from 192 to 96 (01100000) after 0.498272s
+
+CHECKING "Sync Start - PORTB"
+(Half point for every LED match, full point for every LED match with correct duration.)
+ Expected:  0x0  0x1  0x3  0x7  0xf 0x1f 0x3f 0x7f 0xff  0x0  0x1  0x3
+   Output:  0x0  0x1  0x3  0x7  0xf 0x1f 0x3f 0x7f 0xff  0x0  0x1  0x3
+Time (ms):  498  498  498  498  498  498  498  498  498  498  498  498
+   Points:  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0
+Correct/Max: 12.0 / 12
+Grade for "Sync Start - PORTB": 5.00 / 5.0
+
+CHECKING "Sync Start - PORTC"
+(Half point for every LED match, full point for every LED match with correct duration.)
+ Expected:  0x0 0x80 0xc0 0xe0 0xf0 0xf8 0xfc 0xfe 0xff  0x0 0x80 0xc0
+   Output:  0x0 0x80 0xc0 0xe0 0xf0 0xf8 0xfc 0xfe 0xff  0x0 0x80 0xc0
+Time (ms):  498  498  498  498  498  498  498  498  498  498  498  498
+   Points:  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0
+Correct/Max: 12.0 / 12
+Grade for "Sync Start - PORTC": 5.00 / 5.0
+
+CHECKING "Sync Start - PORTD" (Blinking)
+ Expected:  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1
+   Output:  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1  0x0  0x1
+Time (ms):  507  507  507  507  507  507  507  507  507  507  507  397
+   Points:  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  0.5
+Correct/Max: 11.5 / 12
+Grade for "Sync Start - PORTD": 0.96 / 1.0
+
+
+LATC changed from 96 to 224 (11100000) after 1e-06s (FLICKER, ignored)
+LATB changed from 3 to 6 (00000110) after 2.2e-05s (FLICKER, ignored)
+LATB changed from 6 to 7 (00000111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.109584s
+LATC changed from 224 to 0 (00000000) after 0.498267s
+LATB changed from 7 to 0 (00000000) after 0.498256s
+LATD changed from 0 to 1 (00000001) after 0.507378s
+LATD changed from 1 to 0 (00000000) after 0.507378s
+LATD changed from 0 to 1 (00000001) after 0.50738s
+LATD changed from 1 to 0 (00000000) after 0.507378s
+
+CHECKING "Sync Stop - PORTC" (Must be turned off)
+   Output: 0xe0  0x0
+Time (ms):  498 1640
+Grade for "Sync Stop - PORTC": 5.00 / 5.0
+
+CHECKING "Sync Stop - PORTB" (Must be turned off)
+   Output:  0x7  0x0
+Time (ms):  498 1640
+Grade for "Sync Stop - PORTB": 5.00 / 5.0
+
+CHECKING "Sync Stop - PORTD" (Blinking)
+ Expected:  0x0  0x1  0x0  0x1  0x0
+   Output:  0x1  0x0  0x1  0x0  0x1
+Time (ms):  109  507  507  507  507
+   Points:  0.0 0.75 0.75 0.75 0.75
+Correct/Max: 3.0 / 5
+Grade for "Sync Stop - PORTD": 0.60 / 1.0
+
+
+
+
+RUNNING TEST: async_test
+	Starts and stops progress bars asynchronously.
+LATB changed from 0 to 255 (11111111) after 1.8e-05s (FLICKER, ignored)
+LATC changed from 0 to 255 (11111111) after 1.9e-05s (FLICKER, ignored)
+LATD changed from 0 to 255 (11111111) after 2e-05s (FLICKER, ignored)
+LATB changed from 255 to 0 (00000000) after 1.004576s
+Loading async0.scl stimulus file
+LATC changed from 255 to 0 (00000000) after 1e-06s (FLICKER, ignored)
+LATD changed from 255 to 0 (00000000) after 2e-06s (FLICKER, ignored)
+LATB changed from 0 to 1 (00000001) after 0.49824s
+LATD changed from 0 to 1 (00000001) after 0.507382s
+LATC changed from 0 to 128 (10000000) after 0.996485s
+LATB changed from 1 to 2 (00000010) after 0.498267s
+LATB changed from 2 to 3 (00000011) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.507395s
+LATC changed from 128 to 64 (01000000) after 0.498272s
+LATC changed from 64 to 192 (11000000) after 1e-06s (FLICKER, ignored)
+LATB changed from 3 to 6 (00000110) after 0.498272s
+LATB changed from 6 to 7 (00000111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.5074s
+LATC changed from 192 to 96 (01100000) after 0.498272s
+LATC changed from 96 to 224 (11100000) after 1e-06s (FLICKER, ignored)
+LATB changed from 7 to 14 (00001110) after 0.498272s
+LATB changed from 14 to 15 (00001111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.5074s
+LATC changed from 224 to 112 (01110000) after 0.498272s
+LATC changed from 112 to 240 (11110000) after 1e-06s (FLICKER, ignored)
+LATB changed from 15 to 30 (00011110) after 0.498272s
+LATB changed from 30 to 31 (00011111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507402s
+LATC changed from 240 to 120 (01111000) after 0.498267s
+LATC changed from 120 to 248 (11111000) after 1e-06s (FLICKER, ignored)
+LATB changed from 31 to 62 (00111110) after 0.498267s
+
+CHECKING "Async Start - PORTB"
+(Half point for every LED match, full point for every LED match with correct duration.)
+ Expected:  0x0  0x1  0x3  0x7  0xf 0x1f
+   Output:  0x0  0x1  0x3  0x7  0xf 0x1f
+Time (ms):  498  498  498  498  498  498
+   Points:  1.0  1.0  1.0  1.0  1.0  1.0
+Correct/Max: 6.0 / 6
+Grade for "Async Start - PORTB": 5.00 / 5.0
+
+CHECKING "Async Start - PORTC"
+(Half point for every LED match, full point for every LED match with correct duration.)
+Time (ms): 1000  500  500  500  500
+ Expected:  0x0 0x80 0xc0 0xe0 0xf0
+   Output:  0x0 0x80 0xc0 0xe0 0xf0
+Time (ms):  996  498  498  498  498
+   Points:  1.0  1.0  1.0  1.0  1.0
+Correct/Max: 5.0 / 5
+Grade for "Async Start - PORTC": 6.00 / 6.0
+
+CHECKING "Async Start - PORTD" (Blinking)
+ Expected:  0x0  0x1  0x0  0x1  0x0  0x1
+   Output:  0x0  0x1  0x0  0x1  0x0  0x1
+Time (ms):  507  507  507  507  507  452
+   Points:  1.0  1.0  1.0  1.0  1.0  1.0
+Correct/Max: 6.0 / 6
+Grade for "Async Start - PORTD": 1.00 / 1.0
+
+
+Loading async1.scl stimulus file
+LATB changed from 62 to 63 (00111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 1 to 0 (00000000) after 0.05479s
+LATC changed from 248 to 0 (00000000) after 0.498243s
+LATB changed from 63 to 126 (01111110) after 0.498264s
+LATB changed from 126 to 127 (01111111) after 1e-06s (FLICKER, ignored)
+LATD changed from 0 to 1 (00000001) after 0.507389s
+LATB changed from 127 to 0 (00000000) after 0.498253s
+LATD changed from 1 to 0 (00000000) after 0.507381s
+LATD changed from 0 to 1 (00000001) after 0.507378s
+
+CHECKING "Async Stop - PORTB"
+(Half point for every LED match, full point for every LED match with correct duration.)
+Time (ms):  500  500    -
+ Expected: 0x3f 0x7f  0x0
+   Output: 0x3f 0x7f  0x0
+Time (ms):  498  498  580
+   Points:  1.0  1.0  1.0
+Correct/Max: 3.0 / 3
+Grade for "Async Stop - PORTB": 6.00 / 6.0
+
+CHECKING "Async Stop - PORTC"
+(Half point for every LED match, full point for every LED match with correct duration.)
+Time (ms):  500    -
+ Expected: 0xf8  0x0
+   Output: 0xf8  0x0
+Time (ms):  498 1078
+   Points:  1.0  1.0
+Correct/Max: 2.0 / 2
+Grade for "Async Stop - PORTC": 5.00 / 5.0
+
+CHECKING "Async Stop - PORTD" (Blinking)
+ Expected:  0x0  0x1  0x0  0x1
+   Output:  0x1  0x0  0x1  0x0
+Time (ms):   54  507  507  507
+   Points:  0.0 0.75 0.75 0.75
+Correct/Max: 2.25 / 4
+Grade for "Async Stop - PORTD": 0.56 / 1.0
+
+
+
+Finished executing tests in 119.18 seconds.
+
+GRADE
+  2.0 /  2.0  Init Period - PORTB
+  2.0 /  2.0  Init Period - PORTC
+  2.0 /  2.0  Init Period - PORTD
+  2.0 /  2.0  No Input - PORTB
+  2.0 /  2.0  No Input - PORTC
+  2.0 /  2.0  No Input - PORTD
+  5.0 /  5.0  RE1 Start - PORTB
+  1.0 /  1.0  RE1 Start - PORTC
+ 0.96 /  1.0  RE1 Start - PORTD
+  5.0 /  5.0  RE1 Stop - PORTB
+  1.0 /  1.0  RE1 Stop - PORTC
+  0.6 /  1.0  RE1 Stop - PORTD
+ 4.79 /  5.0  RE1 Restart - PORTB
+  1.0 /  1.0  RE1 Restart - PORTC
+ 0.69 /  1.0  RE1 Restart - PORTD
+  1.0 /  1.0  RE0 Start - PORTB
+  5.0 /  5.0  RE0 Start - PORTC
+ 0.96 /  1.0  RE0 Start - PORTD
+  1.0 /  1.0  RE0 Stop - PORTB
+  5.0 /  5.0  RE0 Stop - PORTC
+  0.6 /  1.0  RE0 Stop - PORTD
+  1.0 /  1.0  RE0 Restart - PORTB
+ 4.79 /  5.0  RE0 Restart - PORTC
+ 0.69 /  1.0  RE0 Restart - PORTD
+  5.0 /  5.0  Sync Start - PORTB
+  5.0 /  5.0  Sync Start - PORTC
+ 0.96 /  1.0  Sync Start - PORTD
+  5.0 /  5.0  Sync Stop - PORTB
+  5.0 /  5.0  Sync Stop - PORTC
+  0.6 /  1.0  Sync Stop - PORTD
+  5.0 /  5.0  Async Start - PORTB
+  6.0 /  6.0  Async Start - PORTC
+  1.0 /  1.0  Async Start - PORTD
+  6.0 /  6.0  Async Stop - PORTB
+  5.0 /  5.0  Async Stop - PORTC
+ 0.56 /  1.0  Async Stop - PORTD
+TOTAL GRADE: 97.20/100.00

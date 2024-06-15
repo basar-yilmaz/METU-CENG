@@ -1,0 +1,106 @@
+.pos 0x0
+irmovq stack, %rsp
+irmovq $198, %rdx #queried value
+irmovq array_begin, %rdi
+irmovq array_end, %rsi
+call binary_search
+halt
+
+
+binary_search:
+    # check if end - begin > 0 : else return 1
+    rrmovq %rsi ,%rcx # current end is rcx    
+    subq %rdi, %rcx # end - begin
+    irmovq $16, %r14
+    dvvq %r14, %rcx 
+    irmovq $8, %r14
+    mllq %r14, %rcx # %rcx = (end - begin) / 2 
+    addq %rdi, %rcx # %rcx = begin + ((end - begin) >> 1)
+    jmp firstIf
+    
+firstIf:
+    rrmovq %rcx, %rax # %rax = mid
+    rrmovq %rdi, %rbx # %rbx =  init begin
+    rrmovq %rdi, %r9 # %r9 = begin
+    rrmovq %rsi, %r8 # %r8 = end
+    subq %r8, %r9 # begin - end
+    jge base_case_1 # if begin >= end early return
+
+    # calculate *mid
+    mrmovq 0(%rax), %r12 # %r12 stores *mid now
+    subq %rdx, %r12 # %r12 = *mid - value
+
+    je base_case_2 # *mid == value
+    jl rec1 # *mid < value 
+
+    rrmovq %rax, %rsi
+    call binary_search
+    ret
+
+base_case_1:
+    irmovq $-1, %rax
+    ret
+
+base_case_2: # *mid == value    
+    subq %rdi, %rax # mid - begin 
+    irmovq $8, %r13 
+    addq %r13, %rax # mid - begin + 1
+    irmovq $8, %r13 
+    dvvq %r13, %rax
+    ret
+
+# *mid < value
+rec1:   
+    pushq %rcx # push mid to stack
+    pushq %rbx # push begin to stack
+    irmovq $8, %r13 
+    addq %r13, %rcx
+    rrmovq %rcx, %rdi # mid + 1
+    call binary_search # tmp = %rax
+    popq %rbx # get begin from stack
+    popq %rcx # get mid from stack
+    irmovq $1, %r13 
+    addq %rax, %r13 # check tmp + 1 == 0
+    jne l1 # tmp == -1
+    ret
+    
+l1: # tmp != 1
+    irmovq $8, %r13
+    mllq %r13, %rax # we get %rax as 1 not 8
+    addq %rcx, %rax # tmp + mid
+    subq %rbx, %rax # tmp + mid - begin
+    irmovq $8, %r13 # tmp + mid - begin + 1
+    addq %r13, %rax 
+    irmovq $8, %r13 
+    dvvq %r13, %rax 
+    ret
+
+
+
+.pos 0x1008
+array_begin:
+.quad 105
+.quad 118
+.quad 121
+.quad 129
+.quad 136
+.quad 140
+.quad 142
+.quad 152
+.quad 153
+.quad 155
+.quad 167
+.quad 169
+.quad 176
+.quad 179
+.quad 185
+.quad 192
+.quad 195
+.quad 197
+.quad 198
+array_end:
+.quad 0
+.pos 0x1F00
+stack:
+.quad 0
+
